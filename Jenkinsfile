@@ -25,7 +25,6 @@ pipeline {
                        echo "Running build: ${env.BUILD_ID} on ${env.JENKINS_URL}"
                        slackSend channel: 'learn-jenkins', teamDomain: 'webxgloballimited', message: "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                    }
-
           }
 
          stage('Code Checkout') {
@@ -47,7 +46,11 @@ pipeline {
                          bat "mvn -B -DskipTests clean package"
 
                       }
-          }
+         }
+
+         stage('Build Docker Image'){
+              sh 'docker build -t target/docker-jenkins .'
+         }
 
        }
 
@@ -61,6 +64,6 @@ pipeline {
                    aborted {
                        slackSend channel: 'learn-jenkins', teamDomain: 'webxgloballimited', message: "Build ABORTED - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                    }
-            }
+       }
 
    }
