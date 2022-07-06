@@ -52,7 +52,7 @@ pipeline {
               sh 'docker build -t target/docker-jenkins .'
          }
 
-
+      }
 
        post {
                    success {
@@ -66,6 +66,5 @@ pipeline {
                    }
        }
 
-      }
 
    }
