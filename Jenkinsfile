@@ -48,6 +48,14 @@ pipeline {
                       }
          }
 
+         stage('Build Docker Image') {
+                               steps {
+                                 echo "Building image."
+                                  bat "docker build -t target/docker-jenkins ."
+
+                               }
+         }
+
 
       }
 
