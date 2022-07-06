@@ -48,9 +48,6 @@ pipeline {
                       }
          }
 
-         stage('Build Docker Image'){
-              sh 'docker build -t target/docker-jenkins .'
-         }
 
       }
 
