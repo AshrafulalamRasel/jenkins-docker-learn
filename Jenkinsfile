@@ -52,7 +52,7 @@ pipeline {
               sh 'docker build -t target/docker-jenkins .'
          }
 
-       }
+
 
        post {
                    success {
@@ -65,5 +65,7 @@ pipeline {
                        slackSend channel: 'learn-jenkins', teamDomain: 'webxgloballimited', message: "Build ABORTED - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                    }
        }
+
+      }
 
    }
