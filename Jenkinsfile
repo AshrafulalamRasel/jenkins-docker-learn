@@ -51,7 +51,7 @@ pipeline {
          stage('Build Docker') {
                       steps {
                         sh 'printenv'
-                        sh 'docker build -t AshrafulalamRasel/jenkins-docker-learn:""$BUILD_ID"" .'
+                        sh 'docker build -t rasel21/docker-jenkins:""$BUILD_ID"" .'
 
                       }
          }
