@@ -50,15 +50,15 @@ pipeline {
 
          stage('Build Docker') {
                       steps {
-                        sh 'printenv'
-                        sh 'docker build -t rasel21/docker-jenkins:""$BUILD_ID"" .'
+                        bat "printenv"
+                        bat "docker build -t rasel21/docker-jenkins:""$BUILD_ID"" ."
 
                       }
          }
          stage('Docker Publish') {
                       steps {
                         withDockerRegistry([credentialsId: "docker-hub", url: ""])
-                         sh 'docker push rasel21/docker-jenkins:""$BUILD_ID"" .'
+                         bat "docker push rasel21/docker-jenkins:""$BUILD_ID"" ."
 
                       }
          }
