@@ -8,6 +8,8 @@ public class DockerJenkinsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DockerJenkinsApplication.class, args);
+        Practices practices = new Practices();
+        practices.rt();
     }
 
 }
