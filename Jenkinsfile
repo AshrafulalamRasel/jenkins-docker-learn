@@ -57,8 +57,8 @@ pipeline {
          }
          stage('Docker Publish') {
                       steps {
-                        withDockerRegistry([CredentialsId: "", url: ""])
-                        sh 'docker push rasel21/docker-jenkins:""$BUILD_ID"" .'
+                        withDockerRegistry([CredentialsId: "docker-hub", url: ""])
+                         sh 'docker push rasel21/docker-jenkins:""$BUILD_ID"" .'
 
                       }
          }
