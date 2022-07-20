@@ -55,7 +55,13 @@ pipeline {
 
                       }
          }
+         stage('Docker Publish') {
+                      steps {
+                        withDockerRegistry([CredentialsId: "", url: ""])
+                        sh 'docker push rasel21/docker-jenkins:""$BUILD_ID"" .'
 
+                      }
+         }
       }
 
        post {
