@@ -51,7 +51,7 @@ pipeline {
          stage('Build Docker') {
                       steps {
                         echo "printenv"
-                        bat "docker build -t jenkins-docker-learn/docker-jenkins"
+                        bat "docker build -t target/docker-jenkins.jar ."
 
                       }
          }
