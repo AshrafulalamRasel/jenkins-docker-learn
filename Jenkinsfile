@@ -48,9 +48,9 @@ pipeline {
                       }
          }
 
-         stage('Build Docker') {
+         stage('Build Docker Image') {
                       steps {
-                        echo "printenv"
+                        echo "Start To Build Project on a Docker"
                         bat "docker build -t target/docker-jenkins.jar ."
 
                       }
