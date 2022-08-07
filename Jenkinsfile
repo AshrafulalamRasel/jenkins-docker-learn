@@ -57,8 +57,10 @@ pipeline {
          }
          stage('Docker Publish') {
                       steps {
-                        withDockerRegistry([credentialsId: "docker-hub", url: ""])
-                         bat "docker push rasel21/docker-jenkins-learn:docker-jenkins"
+                       script{
+                          withDockerRegistry([credentialsId: "docker-hub", url: ""])
+                            bat "docker push rasel21/docker-jenkins-learn:docker-jenkins"
+                       }
 
                       }
          }
