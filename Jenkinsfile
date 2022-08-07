@@ -51,16 +51,7 @@ pipeline {
          stage('Build Docker Image') {
                       steps {
                         echo "Start To Build Project on a Docker"
-                        bat "docker build -t target/docker-jenkins.jar ."
-
-                      }
-         }
-         stage('Docker Publish') {
-                      steps {
-                       script{
-                          withDockerRegistry([credentialsId: "docker-hub", url: ""])
-                            bat "docker push rasel21/docker-jenkins-learn:docker-jenkins"
-                       }
+                        bat "docker build -f Dockerfile -t docker-jenkins.jar ."
 
                       }
          }
