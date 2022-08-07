@@ -1,0 +1,28 @@
+Docker Compose run CMD :  docker-compose up --build -d
+
+Docker Service Show :  docker ps -all
+
+Docker Logs :  docker logs serviceId  like{1234567777}
+
+Docker Logs :  docker logs serviceId  like{1234567777}
+
+Docker build : docker build -f Dockerfile -t jarFileName
+
+Docker Images : docker images
+
+Docker Run : docker run -p 9090:9090 docker-jenkins or docker run -p 9090:9090 44d
+
+
+
+
+services:
+  web:
+    container_name: webx_order_service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file: ./.env
+    ports:
+      - 9007:9007
+    volumes:
+      - ./uploads:/home/uploads

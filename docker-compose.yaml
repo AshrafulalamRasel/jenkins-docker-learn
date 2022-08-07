@@ -1,10 +1,13 @@
 version: "3"
 services:
-  docker-jenkins:
-    image: docker-jenkins:latest
-    ports:
-      - 9090:9090
-    restart: unless-stopped
+  web:
+    container_name: docker-jenkins
     build:
       context: ./
       dockerfile: Dockerfile
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./uploads:/home/uploads
+
