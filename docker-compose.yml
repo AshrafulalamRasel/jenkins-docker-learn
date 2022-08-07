@@ -1,0 +1,10 @@
+version: "3"
+services:
+  docker-jenkins:
+    image: docker-jenkins:latest
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
