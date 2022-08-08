@@ -1,7 +1,5 @@
 version: "3"
 services:
-  backend:
-    container_name: docker-jenkins
     build:
       context: ./
       dockerfile: Dockerfile
