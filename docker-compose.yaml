@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  backend:
     container_name: docker-jenkins
     build:
       context: ./
