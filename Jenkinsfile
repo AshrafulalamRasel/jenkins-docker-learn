@@ -59,7 +59,7 @@ pipeline {
         stage('Docker Image Deploy') {
                       steps {
                         echo "Start To Deploy on a Docker"
-                        bat "docker-compose up"
+                        bat "docker-compose up -d"
 
                       }
          }
