@@ -48,13 +48,6 @@ pipeline {
                       }
          }
 
-         stage('Build Docker Image') {
-                      steps {
-                        echo "Start To Build Project on a Docker"
-                        bat "docker build -f Dockerfile -t docker-jenkins.jar ."
-
-                      }
-         }
           
         stage('Docker Image Deploy') {
                       steps {
